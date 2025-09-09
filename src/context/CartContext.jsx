@@ -27,9 +27,8 @@ export function CartProvider({ children }) {
   // ⤵️ Nueva función para restar un producto
   const decreaseItem = (id) => {
     setCart((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-      ).filter((item) => item.quantity > 0));
+      prev.map(item => item.id === id ?
+        { ...item, quantity: item.quantity - 1 } : item).filter((item) => item.quantity > 0));
   };
 
   // ❌ Eliminar un producto del carrito

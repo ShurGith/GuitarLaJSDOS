@@ -41,7 +41,7 @@ function Header() {
                       </p>
                       <div className="flex h-full  items-center justify-center  gap-4">
                         <button
-                          onClick={() => decreaseItem(item)}
+                          onClick={() => decreaseItem(item.id)}
                           type="button"
                           className="bg-black text-white px-1 cursor-pointer hover:bg-black/70" >
                           -
@@ -56,6 +56,7 @@ function Header() {
                       </div>
                       <div className="flex items-center justify-end">
                         <button
+                          onClick={() => removeFromCart(item.id)}
                           className="bg-red-500 hover:bg-red-600 w-8 h-8  transition-colors cursor-pointer font-bold text-xs  rounded-full"
                           type="button" >
                           X
