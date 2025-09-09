@@ -1,11 +1,15 @@
 // @ts-nocheck
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const CartContext = createContext(null)
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([])
+  useEffect(() => {
+    // Guardar carrito en localStorage cada vez que cambie
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   // ✅   Añadir un producto al carrito
   const addToCart = (item) => {
@@ -36,7 +40,9 @@ export function CartProvider({ children }) {
 
   // 🆑 Vaciar el carrito
   const clearCart = () => {
-    setCart([]);
+    //setCart([]);
+    localStorage.removeItem('cart');
+
   };
 
   return (
