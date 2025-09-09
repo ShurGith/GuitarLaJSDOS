@@ -5,7 +5,10 @@ import { createContext, useEffect, useState } from 'react';
 export const CartContext = createContext(null)
 
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState([])
+
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  )
   useEffect(() => {
     // Guardar carrito en localStorage cada vez que cambie
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -39,8 +42,8 @@ export function CartProvider({ children }) {
 
   // 🆑 Vaciar el carrito
   const clearCart = () => {
-    //setCart([]);
-    localStorage.removeItem('cart');
+    setCart([]); //Vacia el carrito, pone un array vacio pero aún queda el nombre en el localstorage
+    localStorage.removeItem('cart');//& Elimina por completo el carrito en el localstorage.
 
   };
 

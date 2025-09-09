@@ -18,7 +18,7 @@ function Header() {
         </a>
         <nav className="relative group">
           <img className="w-8" src="./public/img/carrito.png" alt="imagen carrito" />
-          <div id="carrito" className="absolute min-w-[350px] shadow-lg group-hover:block bg-white p-2.5 fit-content top-full right-0 rounded-md">
+          <div id="carrito" className="hidden z-50 absolute min-w-[350px] shadow-lg group-hover:block bg-white p-2.5 fit-content top-full right-0 rounded-md">
             {isEmpty &&
               <p className="text-center">El carrito esta vacio</p>
             }
@@ -56,7 +56,7 @@ function Header() {
                       <div className="flex items-center justify-end">
                         <button
                           onClick={() => removeFromCart(item.id)}
-                          className="bg-red-500 hover:bg-red-600 w-8 h-8  transition-colors cursor-pointer font-bold text-xs  rounded-full"
+                          className="bg-white border-2 border-red-600 hover:text-white hover:bg-red-600 w-8 h-8  transition-colors cursor-pointer font-bold text-xs rounded-full"
                           type="button" >
                           X
                         </button>
