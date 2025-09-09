@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 // @ts-nocheck
-
 import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
 
@@ -11,7 +10,6 @@ function GuitarCard({ guitar }) {
   return (
     <>
       <img className="w-1/3 h-auto px-3 hover:scale-[1.5] transition-all duration-500 ease-in-out " src={`./public/img/${image}.jpg`} alt="imagen guitarra" />
-
       <div className="flex flex-col gap-y-2 font-primary">
         <h3 className="text-black text-2xl font-black uppercase mb-2">{name}</h3>
         <p className='font-forum mb-4'>{description}</p>
