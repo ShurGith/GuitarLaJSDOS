@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --font-primary: 'Outfit', sans-serif;
+  --font-forum: 'Forum', cursive;
+  --color-primaryColor: #e99401;
+  --color-secondaryColor: #6c757d;
+  --color-successColor: #198754;
+  --color-infoColor: #0dcaf0;
+  --color-warningColor: #ffc107;
+  --color-dangerColor: #dc3545;
+  --color-lightColor: #f8f9fa;
+  --color-darkColor: #262626;
+ }
