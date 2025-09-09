@@ -3,10 +3,9 @@
 import { useContext, useMemo } from "react";
 import { CartContext } from "../context/cartContext";
 function Header() {
-  const { cart, setCart, addToCart, decreaseItem, removeFromCart } = useContext(CartContext);
+  const { cart, addToCart, decreaseItem, removeFromCart, clearCart } = useContext(CartContext);
   const totalToPay = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
   const isEmpty = useMemo(() => cart.length === 0, [cart]);
-  //const isEmpty = !cart.length;
 
   return (
     <header className="bg-cover relative py-6 w-full h-auto bg-gray-700 bg-center " style={{
@@ -66,7 +65,10 @@ function Header() {
                   </div>
                 ))}
                 <p className="text-end">Total pagar: <span className="font-bold">{totalToPay}</span></p>
-                <button className="w-full bg-black mt-3 p-2 text-white uppercase font-bold cursor-pointer hover:bg-black/80 transition-colors">Vaciar Carrito</button>
+                <button
+                  onClick={clearCart}
+                  type="button"
+                  className="w-full bg-black mt-3 p-2 text-white uppercase font-bold cursor-pointer hover:bg-black/80 transition-colors">Vaciar Carrito</button>
               </div>}
           </div>
         </nav>
